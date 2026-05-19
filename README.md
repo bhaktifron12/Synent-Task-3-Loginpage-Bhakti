@@ -1,4 +1,4 @@
-# Login Page UI
+# Synent-Task-3-Loginpage-Bhakti
 
 A clean and modern Login Page UI created as part of Task 3 for the Synent Technologies Web Development Internship Program.
 
