@@ -53,7 +53,7 @@ Use the following credentials to test the login:
 ## 📂 Project Structure
 
 ```text
-login_page_UI/
+Synen-Task-3-Loginpage-Bhakti/
 ├── Login_Page.html
 └── README.md
 ```
