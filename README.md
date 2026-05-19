@@ -106,7 +106,7 @@ Synen-Task-3-Loginpage-Bhakti/
 
 ## 🔗 GitHub Repository
 
-https://github.com/bhaktifron12/login_page_UI
+https://github.com/bhaktifron12/Synent-Task-3-Loginpage-Bhakti.git
 
 ---
 
