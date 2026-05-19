@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ff00d0, #d69cc8);
+}
+
+.container {
+    background: rgb(244, 239, 243);
+    padding: 30px;
+    width: 320px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box span {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #bd59d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b86ae5;
+}
+
+.msg {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.error { color: red; }
+.success { color: green; }
+
+.forgot {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+
+    <input type="text" id="email" placeholder="Enter Email">
+
+    <div class="password-box">
+        <input type="password" id="password" placeholder="Enter Password">
+        <span onclick="togglePassword()">👁</span>
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <div class="msg" id="message"></div>
+
+    <div class="forgot" onclick="forgotPassword()">Forgot Password?</div>
+</div>
+
+<script>
+// SHOW/HIDE PASSWORD
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
+
+// LOGIN FUNCTION
+function login() {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("message");
+
+    let storedEmail = "bhakti@gmail.com";
+    let storedPassword = "12345";
+
+    if (!email.includes("@")) {
+        msg.innerHTML = "Email must contain @";
+        msg.className = "msg error";
+        return;
+    }
+
+    if (email === "" || password === "") {
+        msg.innerHTML = "Please fill all fields";
+        msg.className = "msg error";
+        return;
+    }
+
+    if (email === storedEmail && password === storedPassword) {
+        msg.innerHTML = "Login Successful!";
+        msg.className = "msg success";
+    } else {
+        msg.innerHTML = "Invalid Email or Password";
+        msg.className = "msg error";
+    }
+}
+
+// FORGOT PASSWORD FUNCTION
+function forgotPassword() {
+    let email = prompt("Enter your registered email:");
+
+    if (email === null || email === "") {
+        alert("Email is required!");
+        return;
+    }
+
+    if (!email.includes("@")) {
+        alert("Invalid email! '@' required");
+        return;
+    }
+
+    alert("Password reset link sent to " + email);
+}
+</script>
+
+</body>
+</html>
